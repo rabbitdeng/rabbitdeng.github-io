@@ -2,6 +2,10 @@
   <div class="container">
     <div class="footer-content">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.</p>
+      <div class="site-stats">
+        <span>总访问量：<span id="busuanzi_value_site_pv"></span></span>
+        <span>总访客数：<span id="busuanzi_value_site_uv"></span></span>
+      </div>
       <ul class="social-links">
         {% if site.github %}
           <li><a href="https://github.com/{{ site.github }}" target="_blank">GitHub</a></li>

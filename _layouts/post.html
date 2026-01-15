@@ -26,15 +26,78 @@ layout: default
   <div class="post-navigation">
     {% if page.previous.url %}
       <a href="{{ page.previous.url }}" class="prev-post">
-        <span class="nav-label">Previous Post</span>
+        <span class="nav-label">上一篇</span>
         <h3 class="nav-title">{{ page.previous.title }}</h3>
       </a>
     {% endif %}
     {% if page.next.url %}
       <a href="{{ page.next.url }}" class="next-post">
-        <span class="nav-label">Next Post</span>
+        <span class="nav-label">下一篇</span>
         <h3 class="nav-title">{{ page.next.title }}</h3>
       </a>
     {% endif %}
   </div>
+  
+  <div class="post-stats">
+    <!-- 访问量统计 -->
+    <div class="post-views">
+      <span class="stats-label">阅读量：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </div>
+    
+    <!-- 点赞功能 -->
+    <div class="post-like">
+      <button id="like-btn" class="like-button" onclick="toggleLike()">
+        <span id="like-icon">❤️</span>
+        <span id="like-count">0</span>
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    // 初始化点赞功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const postId = '{{ page.url }}';
+      const likeCountKey = 'like_count_' + postId;
+      const hasLikedKey = 'has_liked_' + postId;
+      
+      // 恢复点赞数
+      const likeCount = localStorage.getItem(likeCountKey) || '0';
+      document.getElementById('like-count').textContent = likeCount;
+      
+      // 恢复点赞状态
+      const hasLiked = localStorage.getItem(hasLikedKey) === 'true';
+      if (hasLiked) {
+        document.getElementById('like-icon').textContent = '💖';
+      }
+    });
+    
+    function toggleLike() {
+      const postId = '{{ page.url }}';
+      const likeCountKey = 'like_count_' + postId;
+      const hasLikedKey = 'has_liked_' + postId;
+      
+      let likeCount = parseInt(localStorage.getItem(likeCountKey) || '0');
+      let hasLiked = localStorage.getItem(hasLikedKey) === 'true';
+      
+      if (hasLiked) {
+        // 取消点赞
+        likeCount--;
+        hasLiked = false;
+        document.getElementById('like-icon').textContent = '❤️';
+      } else {
+        // 点赞
+        likeCount++;
+        hasLiked = true;
+        document.getElementById('like-icon').textContent = '💖';
+      }
+      
+      // 保存到localStorage
+      localStorage.setItem(likeCountKey, likeCount.toString());
+      localStorage.setItem(hasLikedKey, hasLiked.toString());
+      
+      // 更新显示
+      document.getElementById('like-count').textContent = likeCount;
+    }
+  </script>
 </article>
