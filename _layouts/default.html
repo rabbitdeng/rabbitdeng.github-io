@@ -72,6 +72,21 @@
         // 将按钮添加到代码块中
         pre.appendChild(copyBtn);
       });
+      
+      // 获取GitHub Stars数量
+      const githubStarsElement = document.getElementById('github-stars');
+      if (githubStarsElement) {
+        fetch('https://api.github.com/users/rabbitdeng/repos?per_page=100')
+          .then(response => response.json())
+          .then(repos => {
+            const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+            githubStarsElement.textContent = totalStars;
+          })
+          .catch(err => {
+            console.error('获取GitHub Stars失败:', err);
+            githubStarsElement.textContent = '获取失败';
+          });
+      }
     });
   </script>
 </body>
