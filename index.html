@@ -1,0 +1,89 @@
+---
+layout: default
+title: Home
+---
+
+<section class="home-page">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Hi, I'm {{ site.author }}</h1>
+    <p class="hero-subtitle">A passionate developer sharing knowledge and insights about technology</p>
+    <p class="hero-description">{{ site.description }}</p>
+  </div>
+
+  <!-- About Me Section -->
+  <div class="about-section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm a software developer with expertise in web development, cloud computing, and open source technologies. I love building scalable, efficient, and user-friendly applications.</p>
+        <p>On this blog, I share my experiences, tutorials, and thoughts on various technical topics. Whether you're a beginner or an experienced developer, I hope you'll find something valuable here.</p>
+      </div>
+      <div class="tech-stack">
+        <h3>My Tech Stack</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Posts Section -->
+  <div class="latest-posts">
+    <h2>Latest Posts</h2>
+    <div class="posts-list">
+      {% for post in site.posts %}
+        <article class="post-item">
+          <div class="post-header">
+            <div class="post-meta">
+              <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+              {% if post.tags.size > 0 %}
+                <div class="post-tags">
+                  {% for tag in post.tags %}
+                    <span class="post-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          </div>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link prev">&laquo; Previous</a>
+      {% else %}
+        <span class="pagination-link disabled">&laquo; Previous</span>
+      {% endif %}
+      
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <span class="pagination-link current">{{ page }}</span>
+        {% elsif page == 1 %}
+          <a href="{{ '/' | relative_url }}" class="pagination-link">{{ page }}</a>
+        {% else %}
+          <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-link">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+      
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link next">Next &raquo;</a>
+      {% else %}
+        <span class="pagination-link disabled">Next &raquo;</span>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
