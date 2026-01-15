@@ -5,7 +5,7 @@ author: 邓果垚
 email: 741533684@qq.com
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://github.com/rabbitdeng" # the base hostname & protocol for your site
+url: "https://rabbitdeng.github.io" # the base hostname & protocol for your site
 repository: rabbitdeng/rabbitdeng.github.io # GitHub repository in format username/repo-name
 
 # GitHub Pages Configuration
