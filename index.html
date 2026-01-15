@@ -1,43 +1,19 @@
 ---
 layout: default
-title: Home
+title: 首页
 ---
 
 <section class="home-page">
-  <!-- Hero Section -->
+  <!-- 英雄区 -->
   <div class="hero-section">
-    <h1>Hi, I'm {{ site.author }}</h1>
-    <p class="hero-subtitle">A passionate developer sharing knowledge and insights about technology</p>
+    <h1>你好，我是 {{ site.author }}</h1>
+    <p class="hero-subtitle">一名热爱技术的开发者，专注于分享知识和行业洞察</p>
     <p class="hero-description">{{ site.description }}</p>
   </div>
 
-  <!-- About Me Section -->
-  <div class="about-section">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>I'm a software developer with expertise in web development, cloud computing, and open source technologies. I love building scalable, efficient, and user-friendly applications.</p>
-        <p>On this blog, I share my experiences, tutorials, and thoughts on various technical topics. Whether you're a beginner or an experienced developer, I hope you'll find something valuable here.</p>
-      </div>
-      <div class="tech-stack">
-        <h3>My Tech Stack</h3>
-        <div class="tech-tags">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Git</span>
-          <span class="tech-tag">Linux</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Latest Posts Section -->
+  <!-- 最新文章 -->
   <div class="latest-posts">
-    <h2>Latest Posts</h2>
+    <h2>最新文章</h2>
     <div class="posts-list">
       {% for post in site.posts %}
         <article class="post-item">
@@ -55,7 +31,7 @@ title: Home
             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           </div>
           <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
-          <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+          <a href="{{ post.url | relative_url }}" class="read-more">阅读更多 →</a>
         </article>
       {% endfor %}
     </div>
@@ -64,9 +40,9 @@ title: Home
   {% if paginator.total_pages > 1 %}
     <div class="pagination">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link prev">&laquo; Previous</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link prev">&laquo; 上一页</a>
       {% else %}
-        <span class="pagination-link disabled">&laquo; Previous</span>
+        <span class="pagination-link disabled">&laquo; 上一页</span>
       {% endif %}
       
       {% for page in (1..paginator.total_pages) %}
@@ -80,9 +56,9 @@ title: Home
       {% endfor %}
       
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link next">Next &raquo;</a>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link next">下一页 &raquo;</a>
       {% else %}
-        <span class="pagination-link disabled">Next &raquo;</span>
+        <span class="pagination-link disabled">下一页 &raquo;</span>
       {% endif %}
     </div>
   {% endif %}

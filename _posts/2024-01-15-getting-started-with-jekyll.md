@@ -1,80 +1,80 @@
 ---
 layout: post
-title: "Getting Started with Jekyll and GitHub Pages"
+title: "使用 Jekyll 和 GitHub Pages 搭建个人博客"
 date: 2024-01-15 10:00:00
-author: "Your Name"
-tags: [jekyll, github-pages, blogging]
+author: "邓果垚"
+tags: [jekyll, github-pages, 博客]
 ---
 
-# Getting Started with Jekyll and GitHub Pages
+# 使用 Jekyll 和 GitHub Pages 搭建个人博客
 
-Welcome to my first blog post! In this article, I'll walk you through the process of setting up a blog using Jekyll and GitHub Pages.
+欢迎来到我的第一篇博客文章！在这篇文章中，我将一步步指导你如何使用 Jekyll 和 GitHub Pages 搭建属于自己的个人博客。
 
-## What is Jekyll?
+## 什么是 Jekyll？
 
-Jekyll is a static site generator that allows you to create beautiful websites and blogs using Markdown, Liquid, HTML, and CSS. It's perfect for developers who want to write content without dealing with complex CMS systems.
+Jekyll 是一个静态站点生成器，它允许你使用 Markdown、Liquid、HTML 和 CSS 创建美观的网站和博客。对于那些想专注于写作而不想处理复杂 CMS 系统的开发者来说，它是一个完美的选择。
 
-## Why GitHub Pages?
+## 为什么选择 GitHub Pages？
 
-GitHub Pages is a free hosting service provided by GitHub that allows you to host static websites directly from your GitHub repository. It integrates seamlessly with Jekyll, making it an ideal choice for hosting your Jekyll blog.
+GitHub Pages 是 GitHub 提供的免费托管服务，允许你直接从 GitHub 仓库托管静态网站。它与 Jekyll 无缝集成，是托管 Jekyll 博客的理想选择。
 
-## Prerequisites
+## 前置条件
 
-Before we get started, you'll need:
+在开始之前，你需要准备：
 
-- A GitHub account
-- Git installed on your local machine
-- Ruby and RubyGems installed (for local development)
+- 一个 GitHub 账号
+- 本地机器上安装了 Git
+- 安装了 Ruby 和 RubyGems（用于本地开发）
 
-## Step 1: Create a GitHub Repository
+## 步骤 1：创建 GitHub 仓库
 
-First, create a new repository on GitHub. For user or organization pages, the repository name should be `username.github.io` or `organization.github.io` respectively.
+首先，在 GitHub 上创建一个新仓库。对于用户或组织页面，仓库名称应该是 `username.github.io` 或 `organization.github.io`。
 
-## Step 2: Install Jekyll Locally
+## 步骤 2：本地安装 Jekyll
 
-Install Jekyll and Bundler gems:
+安装 Jekyll 和 Bundler  gems：
 
 ```bash
 gem install bundler jekyll
 ```
 
-## Step 3: Initialize Your Jekyll Site
+## 步骤 3：初始化你的 Jekyll 站点
 
-Create a new Jekyll site in your local directory:
+在本地目录中创建一个新的 Jekyll 站点：
 
 ```bash
 jekyll new my-blog
 cd my-blog
 ```
 
-## Step 4: Configure Your Site
+## 步骤 4：配置你的站点
 
-Edit the `_config.yml` file to configure your site settings:
+编辑 `_config.yml` 文件来配置你的站点设置：
 
 ```yaml
-title: My Blog
-description: A simple Jekyll blog hosted on GitHub Pages
-author: Your Name
+title: 我的博客
+description: 一个托管在 GitHub Pages 上的简单 Jekyll 博客
+author: 你的名字
 email: your.email@example.com
 ```
 
-## Step 5: Write Your First Blog Post
+## 步骤 5：撰写你的第一篇博客文章
 
-Create a new Markdown file in the `_posts` directory with the following naming convention: `YYYY-MM-DD-title.md`.
+在 `_posts` 目录中创建一个新的 Markdown 文件，命名规则为：`YYYY-MM-DD-title.md`。
 
-## Step 6: Test Your Site Locally
+## 步骤 6：本地测试你的站点
 
-Build and serve your site locally to see how it looks:
+构建并本地预览你的站点，看看效果如何：
 
 ```bash
 bundle exec jekyll serve
 ```
 
-Visit `http://localhost:4000` in your browser to view your site.
+在浏览器中访问 `http://localhost:4000` 查看你的站点。
 
-## Step 7: Deploy to GitHub Pages
+## 步骤 7：部署到 GitHub Pages
 
-Push your changes to GitHub:
+将你的更改推送到 GitHub：
 
 ```bash
 git init
@@ -84,10 +84,10 @@ git remote add origin https://github.com/username/username.github.io.git
 git push -u origin main
 ```
 
-Your site should now be live at `https://username.github.io`.
+你的站点现在应该可以通过 `https://username.github.io` 访问了。
 
-## Conclusion
+## 结论
 
-Setting up a blog with Jekyll and GitHub Pages is a straightforward process that allows you to focus on writing content rather than managing servers. With its simplicity and flexibility, Jekyll is an excellent choice for developers and writers alike.
+使用 Jekyll 和 GitHub Pages 搭建博客是一个简单直接的过程，让你可以专注于写作内容而不是管理服务器。凭借其简单性和灵活性，Jekyll 是开发者和写作者的绝佳选择。
 
-Happy blogging!
+祝你博客写作愉快！

@@ -1,0 +1,23 @@
+---
+layout: default
+title: 文章归档
+---
+
+<section class="archive-page">
+  <h1>文章归档</h1>
+  
+  {% for post in site.posts %}
+    {% assign currentYear = post.date | date: "%Y" %}
+    {% if currentYear != prevYear %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <h2>{{ currentYear }}</h2>
+      <ul class="archive-list">
+      {% assign prevYear = currentYear %}
+    {% endif %}
+    <li>
+      <span class="archive-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
