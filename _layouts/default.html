@@ -14,6 +14,9 @@
   {% seo %}
 </head>
 <body>
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+  
   <!-- Header -->
   {% include header.html %}
   
@@ -21,6 +24,11 @@
   <main class="container">
     {{ content }}
   </main>
+  
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" class="back-to-top" title="返回顶部">
+    ↑
+  </button>
   
   <!-- Footer -->
   {% include footer.html %}
@@ -87,6 +95,47 @@
             githubStarsElement.textContent = '获取失败';
           });
       }
+      
+      // 阅读进度条功能
+      const readingProgress = document.getElementById('reading-progress');
+      const backToTopBtn = document.getElementById('back-to-top');
+      
+      function updateReadingProgress() {
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrolled = (scrollTop / (docHeight - windowHeight)) * 100;
+        
+        if (readingProgress) {
+          readingProgress.style.width = scrolled + '%';
+        }
+        
+        // 控制返回顶部按钮显示
+        if (backToTopBtn) {
+          if (scrollTop > 300) {
+            backToTopBtn.classList.add('visible');
+          } else {
+            backToTopBtn.classList.remove('visible');
+          }
+        }
+      }
+      
+      // 返回顶部功能
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // 事件监听
+      window.addEventListener('scroll', updateReadingProgress);
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', scrollToTop);
+      }
+      
+      // 初始化
+      updateReadingProgress();
     });
   </script>
 </body>
