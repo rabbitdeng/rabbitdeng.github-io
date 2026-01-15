@@ -6,9 +6,16 @@ title: 首页
 <section class="home-page">
   <!-- 英雄区 -->
   <div class="hero-section">
-    <h1>你好，我是 {{ site.author }}</h1>
-    <p class="hero-subtitle">一名热爱技术的开发者，专注于分享知识和行业洞察</p>
-    <p class="hero-description">{{ site.description }}</p>
+    <div class="profile-container">
+      <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="{{ site.author }}" class="profile-avatar">
+      <h1>你好，我是 {{ site.author }}</h1>
+      <p class="hero-subtitle">一名热爱技术的开发者，专注于分享知识和行业洞察</p>
+      <p class="hero-description">{{ site.description }}</p>
+      <div class="profile-links">
+        <a href="{{ '/about' | relative_url }}" class="profile-link">关于我</a>
+        <a href="mailto:{{ site.email }}" class="profile-link">联系我</a>
+      </div>
+    </div>
   </div>
 
   <!-- 最新文章 -->
