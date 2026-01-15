@@ -60,6 +60,32 @@ layout: default
         <span id="bookmark-text">收藏</span>
       </button>
     </div>
+    
+    <!-- 分享功能 -->
+    <div class="post-share">
+      <button id="share-btn" class="share-button" onclick="toggleShareMenu()">
+        <span id="share-icon">📤</span>
+        <span id="share-text">分享</span>
+      </button>
+      <div id="share-menu" class="share-menu">
+        <button class="share-item" onclick="copyLink()">
+          <span class="share-item-icon">🔗</span>
+          <span class="share-item-text">复制链接</span>
+        </button>
+        <a href="https://service.wechat.com/share/" target="_blank" class="share-item wechat-share" title="分享到微信">
+          <span class="share-item-icon">💬</span>
+          <span class="share-item-text">微信</span>
+        </a>
+        <a href="https://connect.qq.com/widget/shareqq/index.html?url={{ site.url }}{{ page.url }}&title={{ page.title }}&desc={{ page.excerpt | strip_html | truncate: 100 }}&summary={{ page.excerpt | strip_html | truncate: 100 }}&pics=&style=203&width=32&height=32" target="_blank" class="share-item qq-share" title="分享到QQ">
+          <span class="share-item-icon">🐧</span>
+          <span class="share-item-text">QQ</span>
+        </a>
+        <button class="share-item" onclick="generateQrCode()">
+          <span class="share-item-icon">📱</span>
+          <span class="share-item-text">二维码</span>
+        </button>
+      </div>
+    </div>
   </div>
   
   <script>
@@ -147,5 +173,115 @@ layout: default
         alert('收藏功能暂不可用，请手动添加到收藏夹');
       }
     }
+    
+    // 分享功能
+    let shareMenuVisible = false;
+    
+    function toggleShareMenu() {
+      const shareMenu = document.getElementById('share-menu');
+      shareMenuVisible = !shareMenuVisible;
+      shareMenu.style.display = shareMenuVisible ? 'block' : 'none';
+    }
+    
+    // 复制链接
+    function copyLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        showTempMessage('链接已复制到剪贴板！');
+        toggleShareMenu();
+      }).catch(err => {
+        console.error('复制链接失败:', err);
+        alert('复制链接失败，请手动复制');
+      });
+    }
+    
+    // 生成二维码
+    function generateQrCode() {
+      const url = window.location.href;
+      const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
+      
+      // 创建二维码弹窗
+      const qrModal = document.createElement('div');
+      qrModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+      `;
+      
+      const qrContent = document.createElement('div');
+      qrContent.style.cssText = `
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      `;
+      
+      const qrImage = document.createElement('img');
+      qrImage.src = qrCodeUrl;
+      qrImage.alt = '文章二维码';
+      qrImage.style.marginBottom = '1rem';
+      
+      const qrTitle = document.createElement('h3');
+      qrTitle.textContent = '扫码阅读文章';
+      qrTitle.style.marginBottom = '0.5rem';
+      
+      const qrDesc = document.createElement('p');
+      qrDesc.textContent = '使用微信或QQ扫码';
+      qrDesc.style.color = '#666';
+      qrDesc.style.marginBottom = '1.5rem';
+      
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = '关闭';
+      closeBtn.style.cssText = `
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+      `;
+      closeBtn.onclick = () => {
+        document.body.removeChild(qrModal);
+      };
+      
+      qrContent.appendChild(qrImage);
+      qrContent.appendChild(qrTitle);
+      qrContent.appendChild(qrDesc);
+      qrContent.appendChild(closeBtn);
+      qrModal.appendChild(qrContent);
+      
+      document.body.appendChild(qrModal);
+      toggleShareMenu();
+    }
+    
+    // 显示临时消息
+    function showTempMessage(text) {
+      const tempMsg = document.createElement('div');
+      tempMsg.textContent = text;
+      tempMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; z-index: 10000;';
+      document.body.appendChild(tempMsg);
+      setTimeout(() => {
+        tempMsg.remove();
+      }, 3000);
+    }
+    
+    // 点击页面其他地方关闭分享菜单
+    document.addEventListener('click', function(e) {
+      const shareBtn = document.getElementById('share-btn');
+      const shareMenu = document.getElementById('share-menu');
+      if (shareMenuVisible && !shareBtn.contains(e.target) && !shareMenu.contains(e.target)) {
+        toggleShareMenu();
+      }
+    });
   </script>
 </article>
