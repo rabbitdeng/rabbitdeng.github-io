@@ -6,7 +6,7 @@ email: 741533684@qq.com
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rabbitdeng.github.io" # the base hostname & protocol for your site
-repository: rabbitdeng/rabbitdeng.github.io # GitHub repository in format username/repo-name
+repository: rabbitdeng.github.io # GitHub repository in format username/repo-name
 
 # Build settings
 theme: minima
