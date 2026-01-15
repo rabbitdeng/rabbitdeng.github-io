@@ -1,158 +1,177 @@
-# My Jekyll Blog
+# 🚀 BunnyRabbit的算法工程师博客
 
-A simple Jekyll blog template for GitHub Pages.
+一个基于Jekyll构建的超酷技术博客，专为算法工程师打造！用代码记录思考，用文字分享知识。
 
-## Features
+## ✨ 核心特性
 
-- Clean and responsive design
-- Markdown support for blog posts
-- Syntax highlighting for code blocks
-- Pagination support
-- SEO optimized
-- Easy to customize
+- 🎨 **赛博朋克风格设计**：渐变背景 + 霓虹效果，科技感拉满
+- 📝 **Markdown支持**：轻松编写博客，专注内容创作
+- 💻 **代码高亮**：支持多种编程语言，代码美观易读
+- 📱 **响应式布局**：适配各种设备，随时随地阅读
+- 📊 **访问统计**：实时查看博客流量数据
+- 🔍 **SEO优化**：让你的文章更容易被发现
+- 🎯 **标签系统**：文章分类清晰，查找便捷
+- ❤️ **点赞功能**：与读者互动，获得反馈
 
-## Prerequisites
+## 🛠️ 技术栈
 
-- Ruby 2.7.0 or higher
+- **静态站点生成**：Jekyll 3.9.0
+- **构建语言**：Ruby 4.0+
+- **样式框架**：自定义CSS（赛博朋克风格）
+- **部署平台**：GitHub Pages
+- **访问统计**：不蒜子
+- **代码高亮**：Rouge
+
+## 📋 前置要求
+
+- Ruby 4.0+ （老版本可能会有兼容性问题）
 - RubyGems
 - Bundler
 - Git
 
-## Getting Started
+## 🚀 快速开始
 
-### 1. Install Dependencies
+### 1. 安装依赖
 
 ```bash
 bundle install
 ```
 
-### 2. Serve Locally
+### 2. 本地运行
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --port 4002
 ```
 
-Visit `http://localhost:4000` in your browser to view your site.
+访问 `http://localhost:4002` 查看你的博客！
 
-### 3. Create a New Blog Post
+### 3. 创作新文章
 
-Create a new Markdown file in the `_posts` directory with the following naming convention:
+在 `_posts` 目录下创建新的Markdown文件，命名格式如下：
 
 ```
-YYYY-MM-DD-title.md
+YYYY-MM-DD-文章标题.md
 ```
 
-Add YAML front matter to your post:
+添加YAML前置元数据：
 
 ```yaml
 ---
 layout: post
-title: "Your Post Title"
-date: YYYY-MM-DD HH:MM:SS
-author: "Your Name"
-tags: [tag1, tag2, tag3]
+title: "训练了一个会躲在掩体后面peek射击的太空侵略者智能体"
+date: 2026-01-15 14:00:00
+author: "BunnyRabbit"
+tags: [强化学习, 策略梯度, 深度学习, PyTorch, 游戏AI, Atari]
 ---
 ```
 
-### 4. Customize Your Site
+### 4. 个性化配置
 
-Edit the `_config.yml` file to configure your site settings:
+编辑 `_config.yml` 文件，定制你的博客：
 
 ```yaml
-title: Your Blog Title
-description: Your blog description
-author: Your Name
-email: your.email@example.com
+# 基本配置
+title: BunnyRabbit的技术博客
+description: 专注于分享技术经验、编程技巧和行业洞察的个人博客
+author: BunnyRabbit
+email: 741533684@qq.com
+
+# 构建设置
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
 ```
 
-### 5. Customize the Theme
+### 5. 样式定制
 
-Edit the CSS files in the `css` directory to customize the theme.
+编辑 `css/main.css` 文件，打造你自己的风格！
 
-## Deployment
-
-### Deploy to GitHub Pages
-
-#### Option 1: User/Organization Pages
-
-1. Create a new repository on GitHub with the name `username.github.io` or `organization.github.io`.
-2. Initialize Git in your project directory:
-   ```bash
-   git init
-   ```
-3. Add all files to the repository:
-   ```bash
-   git add .
-   ```
-4. Commit your changes:
-   ```bash
-   git commit -m "Initial commit"
-   ```
-5. Add the remote repository:
-   ```bash
-   git remote add origin https://github.com/username/username.github.io.git
-   ```
-6. Push your changes to GitHub:
-   ```bash
-   git push -u origin main
-   ```
-
-Your site will be live at `https://username.github.io`.
-
-#### Option 2: Project Pages
-
-1. Create a new repository on GitHub.
-2. Initialize Git in your project directory:
-   ```bash
-   git init
-   ```
-3. Add all files to the repository:
-   ```bash
-   git add .
-   ```
-4. Commit your changes:
-   ```bash
-   git commit -m "Initial commit"
-   ```
-5. Add the remote repository:
-   ```bash
-   git remote add origin https://github.com/username/repository-name.git
-   ```
-6. Push your changes to GitHub:
-   ```bash
-   git push -u origin main
-   ```
-7. Go to the repository settings on GitHub.
-8. Under "Pages", select "main" branch and click "Save".
-
-Your site will be live at `https://username.github.io/repository-name`.
-
-## Directory Structure
+## 📦 目录结构
 
 ```
 .
-├── _config.yml          # Site configuration
-├── _includes/           # Include files
-│   ├── footer.html      # Footer template
-│   └── header.html      # Header template
-├── _layouts/            # Layout files
-│   ├── default.html     # Default layout
-│   └── post.html        # Post layout
-├── _posts/              # Blog posts
-├── css/                 # CSS files
-├── index.html           # Home page
-├── about.md             # About page
-├── 404.html             # 404 page
-├── Gemfile              # Ruby gems dependencies
-└── README.md            # This file
+├── _config.yml          # 站点配置
+├── _includes/           # 组件模板
+│   ├── footer.html      # 页脚模板
+│   └── header.html      # 头部模板
+├── _layouts/            # 布局文件
+│   ├── default.html     # 默认布局
+│   ├── page.html        # 页面布局
+│   └── post.html        # 文章布局
+├── _posts/              # 博客文章
+├── assets/              # 静态资源
+│   └── images/          # 图片文件夹
+├── css/                 # CSS样式
+├── index.html           # 首页
+├── about.md             # 关于页面
+├── archive.html         # 归档页面
+├── tags.md              # 标签页面
+├── 404.html             # 404页面
+├── Gemfile              # Ruby依赖
+└── README.md            # 项目说明
 ```
 
-## License
+## 🚀 部署到GitHub Pages
 
-MIT License
+### 1. 初始化Git仓库
 
-## Resources
+```bash
+git init
+git add .
+git commit -m "🎉 初始化博客仓库"
+```
 
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [Markdown Guide](https://www.markdownguide.org/)
+### 2. 添加远程仓库
+
+```bash
+git remote add origin https://github.com/rabbitdeng/rabbitdeng.github.io.git
+```
+
+### 3. 推送代码
+
+```bash
+git push -u origin main
+```
+
+### 4. 访问你的博客
+
+你的博客将在几分钟后上线，访问地址：`https://rabbitdeng.github.io`
+
+## 📝 博客写作技巧
+
+1. **保持代码整洁**：使用代码高亮，添加注释，便于读者理解
+2. **图文并茂**：适当添加图片，增强文章可读性
+3. **标签管理**：合理使用标签，方便读者查找相关内容
+4. **定期更新**：保持更新频率，增加博客活跃度
+5. **互动交流**：欢迎读者评论，及时回复
+
+## 🤖 算法工程师的博客建议
+
+- 分享算法实现细节和踩坑经验
+- 记录项目开发过程和思考
+- 讲解前沿技术和最新论文
+- 分享工具使用技巧和效率提升方法
+- 记录生活中的技术感悟
+
+## 📄 许可证
+
+MIT License - 自由使用，随意修改！
+
+## 📚 学习资源
+
+- [Jekyll官方文档](https://jekyllrb.com/docs/)
+- [GitHub Pages文档](https://docs.github.com/en/pages)
+- [Markdown语法指南](https://www.markdownguide.org/)
+- [强化学习入门](https://spinningup.openai.com/en/latest/)
+- [PyTorch教程](https://pytorch.org/tutorials/)
+
+## 📧 联系我
+
+- Email: 741533684@qq.com
+- GitHub: [rabbitdeng](https://github.com/rabbitdeng)
+
+---
+
+💡 **最后一句**：博客不仅是分享知识的平台，更是记录成长的时光机。开始写作吧，你的每一篇文章都可能影响到某个人！ 🎉
