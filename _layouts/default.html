@@ -27,5 +27,52 @@
   
   <!-- 不蒜子访问统计 -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  <!-- 代码复制功能 -->
+  <script>
+    // 为所有代码块添加复制按钮
+    document.addEventListener('DOMContentLoaded', function() {
+      const preBlocks = document.querySelectorAll('pre');
+      
+      preBlocks.forEach(pre => {
+        // 创建复制按钮
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'code-copy-btn';
+        copyBtn.textContent = '复制';
+        
+        // 添加复制功能
+        copyBtn.addEventListener('click', function() {
+          const code = pre.querySelector('code');
+          if (code) {
+            // 获取代码内容
+            const codeText = code.textContent;
+            
+            // 使用Clipboard API复制代码
+            navigator.clipboard.writeText(codeText).then(() => {
+              // 显示复制成功状态
+              copyBtn.textContent = '已复制';
+              copyBtn.classList.add('copied');
+              
+              // 2秒后恢复原状
+              setTimeout(() => {
+                copyBtn.textContent = '复制';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            }).catch(err => {
+              console.error('复制失败:', err);
+              copyBtn.textContent = '复制失败';
+              
+              setTimeout(() => {
+                copyBtn.textContent = '复制';
+              }, 2000);
+            });
+          }
+        });
+        
+        // 将按钮添加到代码块中
+        pre.appendChild(copyBtn);
+      });
+    });
+  </script>
 </body>
 </html>
