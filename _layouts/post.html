@@ -23,6 +23,35 @@ layout: default
     {{ content }}
   </div>
 
+  <!-- 参考文章区域 -->
+  {% if page.references and page.references.size > 0 %}
+    <div class="post-references">
+      <h2>参考文章</h2>
+      <ol class="references-list">
+        {% for ref in page.references %}
+          <li class="reference-item">
+            {% if ref.url %}
+              <a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer" class="reference-link">
+                {{ ref.title }}
+              </a>
+            {% else %}
+              <span class="reference-title">{{ ref.title }}</span>
+            {% endif %}
+            {% if ref.author %}
+              <span class="reference-author"> - {{ ref.author }}</span>
+            {% endif %}
+            {% if ref.date %}
+              <span class="reference-date"> ({{ ref.date }})</span>
+            {% endif %}
+            {% if ref.publisher %}
+              <span class="reference-publisher"> - {{ ref.publisher }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% endif %}
+
   <div class="post-navigation">
     {% if page.previous.url %}
       <a href="{{ page.previous.url }}" class="prev-post">
