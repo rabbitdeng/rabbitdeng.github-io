@@ -4,6 +4,37 @@ title: "训练了一个会躲在掩体后面peek射击的太空侵略者智能�
 date: 2026-01-15 14:00:00
 author: "BunnyRabbit"
 tags: [强化学习, 策略梯度, 深度学习, PyTorch, 游戏AI, Atari]
+references:
+  - title: "Policy Gradient Methods for Reinforcement Learning with Function Approximation"
+    url: "https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf"
+    author: "Richard S. Sutton, David McAllester, Satinder Singh, Yishay Mansour"
+    date: "1999"
+    publisher: "NeurIPS"
+  - title: "Human-level control through deep reinforcement learning"
+    url: "https://www.nature.com/articles/nature14236"
+    author: "Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, Demis Hassabis"
+    date: "2015"
+    publisher: "Nature"
+  - title: "OpenAI Gym"
+    url: "https://arxiv.org/abs/1606.01540"
+    author: "Greg Brockman, Vicki Cheung, Ludwig Pettersson, Jonas Schneider, John Schulman, Jie Tang, Wojciech Zaremba"
+    date: "2016"
+    publisher: "arXiv"
+  - title: "PyTorch: An Imperative Style, High-Performance Deep Learning Library"
+    url: "https://arxiv.org/abs/1912.01703"
+    author: "Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas Kopf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu Fang, Junjie Bai, Soumith Chintala"
+    date: "2019"
+    publisher: "arXiv"
+  - title: "The Arcade Learning Environment: An Evaluation Platform for General Agents"
+    url: "https://jair.org/index.php/jair/article/view/10819/25823"
+    author: "Marc G. Bellemare, Yavar Naddaf, Joel Veness, Michael Bowling"
+    date: "2013"
+    publisher: "Journal of Artificial Intelligence Research"
+  - title: "Proximal Policy Optimization Algorithms"
+    url: "https://arxiv.org/abs/1707.06347"
+    author: "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov"
+    date: "2017"
+    publisher: "arXiv"
 ---
 
 ## 笑死！我训练了个"怕死"的游戏AI

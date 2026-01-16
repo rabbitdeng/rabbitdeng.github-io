@@ -4,6 +4,22 @@ title: "使用 Jekyll 和 GitHub Pages 搭建个人博客"
 date: 2024-01-15 10:00:00
 author: "BunnyRabbit"
 tags: [jekyll, github-pages, 博客]
+references:
+  - title: "Jekyll Documentation"
+    url: "https://jekyllrb.com/docs/"
+    author: "Jekyll Team"
+    publisher: "Jekyll"
+  - title: "GitHub Pages Documentation"
+    url: "https://docs.github.com/en/pages"
+    author: "GitHub"
+    publisher: "GitHub"
+  - title: "GitHub Pages with Jekyll"
+    url: "https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll"
+    author: "GitHub"
+    publisher: "GitHub"
+  - title: "Markdown Guide"
+    url: "https://www.markdownguide.org/"
+    publisher: "Markdown Guide"
 ---
 
 # 使用 Jekyll 和 GitHub Pages 搭建个人博客
