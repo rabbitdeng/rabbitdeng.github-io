@@ -2,13 +2,18 @@
   <div class="container">
     <nav class="nav">
       <a href="{{ site.baseurl }}/" class="logo">{{ site.title }}</a>
-      <ul class="nav-links">
-        <li><a href="{{ site.baseurl }}/">首页</a></li>
-        <li><a href="{{ site.baseurl }}/about/">关于</a></li>
-        <li><a href="{{ site.baseurl }}/archive/">归档</a></li>
-        <li><a href="{{ site.baseurl }}/tags/">标签</a></li>
-        <li><a href="{{ site.baseurl }}/hobby/">业余生活</a></li>
-      </ul>
+      <div style="display: flex; align-items: center;">
+        <ul class="nav-links">
+          <li><a href="{{ site.baseurl }}/">首页</a></li>
+          <li><a href="{{ site.baseurl }}/about/">关于</a></li>
+          <li><a href="{{ site.baseurl }}/archive/">归档</a></li>
+          <li><a href="{{ site.baseurl }}/tags/">标签</a></li>
+          <li><a href="{{ site.baseurl }}/hobby/">业余生活</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
     </nav>
   </div>
 </header>

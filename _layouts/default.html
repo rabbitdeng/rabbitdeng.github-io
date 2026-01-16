@@ -128,6 +128,53 @@
         });
       }
       
+      // 计算阅读时间
+      function calculateReadingTime() {
+        const content = document.querySelector('.post-content');
+        if (content) {
+          const wordsPerMinute = 200;
+          const text = content.textContent;
+          const wordCount = text.trim().split(/\s+/).length;
+          const readingTime = Math.ceil(wordCount / wordsPerMinute);
+          
+          // 添加阅读时间到页面
+          const readingTimeElement = document.createElement('div');
+          readingTimeElement.className = 'reading-time';
+          readingTimeElement.innerHTML = `<span class="stats-label">阅读时间：</span> ${readingTime} 分钟`;
+          
+          const postMeta = document.querySelector('.post-meta');
+          if (postMeta) {
+            postMeta.appendChild(readingTimeElement);
+          }
+        }
+      }
+      
+      // 主题切换功能
+      function initThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        // 从localStorage获取主题偏好
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+        
+        // 主题切换事件
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            // 更新DOM
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            
+            // 保存到localStorage
+            localStorage.setItem('theme', newTheme);
+          });
+        }
+      }
+      
       // 事件监听
       window.addEventListener('scroll', updateReadingProgress);
       if (backToTopBtn) {
@@ -136,6 +183,8 @@
       
       // 初始化
       updateReadingProgress();
+      calculateReadingTime();
+      initThemeToggle();
     });
   </script>
 </body>
