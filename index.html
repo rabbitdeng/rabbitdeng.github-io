@@ -11,26 +11,6 @@ title: 首页
       <h1>你好，我是 {{ site.author }}</h1>
       <p class="hero-subtitle">一名热爱技术的开发者，专注于分享知识和行业洞察</p>
       <p class="hero-description">{{ site.description }}</p>
-      <div class="personal-info">
-        <ul class="personal-details">
-          <li class="detail-item">
-            <span class="detail-label">职业方向：</span>
-            <span class="detail-value">算法工程师</span>
-          </li>
-          <li class="detail-item">
-            <span class="detail-label">学历：</span>
-            <span class="detail-value">四川大学计算机专业硕士</span>
-          </li>
-          <li class="detail-item">
-            <span class="detail-label">专业方向：</span>
-            <span class="detail-value">人工智能</span>
-          </li>
-          <li class="detail-item">
-            <span class="detail-label">年龄：</span>
-            <span class="detail-value">26岁</span>
-          </li>
-        </ul>
-      </div>
       <div class="github-stats">
         <a href="https://github.com/rabbitdeng" target="_blank" rel="noopener noreferrer" class="stat-link">
           <div class="stat-item">
@@ -73,63 +53,6 @@ title: 首页
     </div>
   </div>
   
-  <!-- 发表论文 -->
-  <div class="papers-section">
-    <h2>发表论文</h2>
-    <div class="papers-list">
-      <article class="paper-item">
-        <h3 class="paper-title">Sam-u: Multi-box prompts triggered uncertainty estimation for reliable sam in medical image</h3>
-        <div class="paper-meta">
-          <span class="paper-citations">引用次数: 87</span>
-          <span class="paper-year">发表年份: 2023</span>
-        </div>
-        <p class="paper-authors">G Deng, K Zou, K Ren, M Wang, X Yuan, S Ying, H Fu</p>
-        <p class="paper-venue">International Conference on Medical Image Computing and Computer-Assisted …</p>
-      </article>
-      
-      <article class="paper-item">
-        <h3 class="paper-title">Uncertainty-inspired open set learning for retinal anomaly identification</h3>
-        <div class="paper-meta">
-          <span class="paper-citations">引用次数: 76</span>
-          <span class="paper-year">发表年份: 2023</span>
-        </div>
-        <p class="paper-authors">M Wang, T Lin, L Wang, A Lin, K Zou, X Xu, Y Zhou, Y Peng, Q Meng, ...</p>
-        <p class="paper-venue">Nature Communications 14 (1), 6757</p>
-      </article>
-      
-      <article class="paper-item">
-        <h3 class="paper-title">A Multi-view Impartial Decision Network for Frontotemporal Dementia Diagnosis</h3>
-        <div class="paper-meta">
-          <span class="paper-citations">引用次数: 2</span>
-          <span class="paper-year">发表年份: 2023</span>
-        </div>
-        <p class="paper-authors">G Deng, K Zou, M Wang, X Yuan, S Ying, H Fu</p>
-        <p class="paper-venue">arXiv preprint arXiv:2307.04981</p>
-      </article>
-      
-      <article class="paper-item">
-        <h3 class="paper-title">基于UNet的磁浮飞行风洞气动力干扰剥离算法</h3>
-        <div class="paper-meta">
-          <span class="paper-year">在线公开时间: 2025-09-04</span>
-        </div>
-
-        <p class="paper-venue">工程科技Ⅱ辑 - 铁路运输;公路与水路运输</p>
-        <p class="paper-venue">分类号: U237;U171</p>
-      </article>
-      
-      <article class="paper-item">
-        <h3 class="paper-title">单向传递的不确定性估计在脑影像智能分析中的研究与应用</h3>
-        <div class="paper-meta">
-          <span class="paper-year">发表年份: 2024</span>
-        </div>
-
-        <p class="paper-venue">四川大学</p>
-        <p class="paper-venue">DOI: 10.27342/d.cnki.gscdu.2024.000720</p>
-        <p class="paper-venue">关键词: 额颞叶痴呆;医学影像智能分析;不确定性估计;深度学习</p>
-      </article>
-    </div>
-  </div>
-
   {% if paginator.total_pages > 1 %}
     <div class="pagination">
       {% if paginator.previous_page %}

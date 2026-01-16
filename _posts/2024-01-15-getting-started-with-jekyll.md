@@ -2,7 +2,7 @@
 layout: post
 title: "使用 Jekyll 和 GitHub Pages 搭建个人博客"
 date: 2024-01-15 10:00:00
-author: "BunnyRabbit"
+author: "Bunny Rabbit"
 tags: [jekyll, github-pages, 博客]
 references:
   - title: "Jekyll Documentation"

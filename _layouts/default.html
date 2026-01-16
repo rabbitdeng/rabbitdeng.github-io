@@ -128,50 +128,35 @@
         });
       }
       
-      // 计算阅读时间
+      // 计算阅读时间功能
       function calculateReadingTime() {
         const content = document.querySelector('.post-content');
         if (content) {
-          const wordsPerMinute = 200;
-          const text = content.textContent;
-          const wordCount = text.trim().split(/\s+/).length;
-          const readingTime = Math.ceil(wordCount / wordsPerMinute);
+          // 配置参数
+          const wordsPerMinute = 200; // 中文阅读速度约为200字/分钟
           
-          // 添加阅读时间到页面
+          // 获取文章内容文本
+          const text = content.textContent;
+          
+          // 计算字数（包括中文、英文单词和数字）
+          // 中文按字符计数，英文按空格分隔的单词计数
+          const chineseChars = text.match(/[\u4e00-\u9fa5]/g)?.length || 0;
+          const englishWords = text.match(/\b[A-Za-z]+\b/g)?.length || 0;
+          const totalWords = chineseChars + englishWords;
+          
+          // 计算阅读时间（分钟），向上取整
+          const readingTime = Math.ceil(totalWords / wordsPerMinute);
+          
+          // 创建阅读时间元素
           const readingTimeElement = document.createElement('div');
           readingTimeElement.className = 'reading-time';
           readingTimeElement.innerHTML = `<span class="stats-label">阅读时间：</span> ${readingTime} 分钟`;
           
+          // 添加到文章meta区域
           const postMeta = document.querySelector('.post-meta');
           if (postMeta) {
             postMeta.appendChild(readingTimeElement);
           }
-        }
-      }
-      
-      // 主题切换功能
-      function initThemeToggle() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        
-        // 从localStorage获取主题偏好
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
-        
-        // 主题切换事件
-        if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            // 更新DOM
-            document.documentElement.setAttribute('data-theme', newTheme);
-            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
-            
-            // 保存到localStorage
-            localStorage.setItem('theme', newTheme);
-          });
         }
       }
       
@@ -184,7 +169,6 @@
       // 初始化
       updateReadingProgress();
       calculateReadingTime();
-      initThemeToggle();
     });
   </script>
 </body>

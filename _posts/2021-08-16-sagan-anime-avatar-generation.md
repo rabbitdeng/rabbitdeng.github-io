@@ -2,7 +2,7 @@
 layout: post
 title: "使用SAGAN生成二次元人物头像(GAN生成对抗网络)--pytorch实现"
 date: 2021-08-16 15:13:14
-author: "BunnyRabbit"
+author: "Bunny Rabbit"
 tags: [GAN, 深度学习, PyTorch, 自注意力机制, 图像生成]
 references:
   - title: "Self-Attention Generative Adversarial Networks"

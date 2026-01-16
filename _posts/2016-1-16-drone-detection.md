@@ -2,8 +2,9 @@
 layout: post
 title: "无人机轨迹数据智能分析与机器学习应用"
 date: 2026-01-16
-author: "Your Name"
+author: "Bunny Rabbit"
 categories: [无人机, 机器学习, 数据分析]
+tags: [无人机, 轨迹分析, 异常检测, 机器学习, 数据分析]
 ---
 
 ## 引言

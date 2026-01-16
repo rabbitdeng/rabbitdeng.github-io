@@ -2,7 +2,7 @@
 layout: post
 title: "训练了一个会躲在掩体后面peek射击的太空侵略者智能体"
 date: 2026-01-15 14:00:00
-author: "BunnyRabbit"
+author: "Bunny Rabbit"
 tags: [强化学习, 策略梯度, 深度学习, PyTorch, 游戏AI, Atari]
 references:
   - title: "Policy Gradient Methods for Reinforcement Learning with Function Approximation"
