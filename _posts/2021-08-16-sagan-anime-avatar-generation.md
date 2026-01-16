@@ -4,6 +4,22 @@ title: "使用SAGAN生成二次元人物头像(GAN生成对抗网络)--pytorch�
 date: 2021-08-16 15:13:14
 author: "BunnyRabbit"
 tags: [GAN, 深度学习, PyTorch, 自注意力机制, 图像生成]
+references:
+  - title: "Self-Attention Generative Adversarial Networks"
+    url: "https://arxiv.org/abs/1805.08318"
+    author: "Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena"
+    date: "2018"
+    publisher: "arXiv"
+  - title: "Generative Adversarial Networks"
+    url: "https://arxiv.org/abs/1406.2661"
+    author: "Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio"
+    date: "2014"
+    publisher: "arXiv"
+  - title: "PyTorch: An Imperative Style, High-Performance Deep Learning Library"
+    url: "https://arxiv.org/abs/1912.01703"
+    author: "Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas Kopf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu Fang, Junjie Bai, Soumith Chintala"
+    date: "2019"
+    publisher: "arXiv"
 ---
 
 这是训练250epoch左右的成果：
